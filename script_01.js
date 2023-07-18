@@ -15,6 +15,80 @@
 
 
 
+
+
+// module: addition a + b | test:
+// output(add(2, 2)); 	// Expected: 4
+// output(add(2, -2));	// Expected: 0
+// output(add(2, 0));	// Expected: 2
+
+function add(a, b) {
+	return a + b;
+}
+
+// module: subtraktion a - b | test:
+// output(sub(3, 2));		// Expected: 1	
+// output(sub(3, -2));		// Expected: 5
+// output(sub(3, 0));		// Expected: 3
+// output(sub(0, 3));		// Expected: -3
+
+function sub(a, b) {
+	return a - b;
+}
+
+// module: multiplikation a - b | test:
+
+function mult(a, b) {
+	return a * b;
+}
+
+// module: division a - b | test:
+
+function div(a, b) {
+	return a / b;
+}
+
+
+
+
+
+
+
+
+
+
+
+// let a, b, c, rechenart;
+
+// console.log("Das ist ein Taschenrechner, geben sie nacheinander Zahl / Zahl / Rechenart ein.");
+
+// a = parseFloat(prompt('Geben Sie die erste Zahl ein:'));
+// b = parseFloat(prompt('Geben Sie die zweite Zahl ein: '));
+// rechenart = prompt("Geben sie die Rechenart ein. Zur auswahl stehen: + - * /")
+
+
+
+// function rechner(a, b, rechenart) {
+// 	switch (true) {
+// 		case rechenart == '+':
+// 			c = a + b;
+// 			break;
+// 		case rechenart == '-':
+// 			c = a - b;
+// 			break;
+// 		case rechenart == '*':
+// 			c = a * b;
+// 			break;
+// 		case rechenart == '/':
+// 			c = a / b;
+// 			break;
+// 		default:
+// 			output('Bitte geben sie Gültige Werte ein.')
+// }
+// output(`${a} ${rechenart} ${b} ergibt = ${c}`)
+// }
+// rechner(a,b,rechenart);
+
 // module: output | test:
 // output("hello");
 // output(2);
