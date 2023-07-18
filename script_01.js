@@ -37,15 +37,27 @@ function sub(a, b) {
 }
 
 // module: multiplikation a - b | test:
+// output(multiply(3,2));		// Expected: 6
+// output(multiply(3,-2));		// Expected: -6	
+// output(multiply(3,0));		// Expected: 0
 
-function mult(a, b) {
+function multiply(a, b) {
 	return a * b;
 }
 
 // module: division a - b | test:
+output(divide(4,2));			// Expected: 2
+output(divide(3,2));			// Expected: 1.5
+output(divide(3,-2));			// Expected: -1.5
+output(divide(0,2));			// Ecpected: 0
+output(divide(3,0));			// Expected: "Division durch 0 nicht möglich"
 
-function div(a, b) {
-	return a / b;
+function divide(a, b) {
+	if (b != 0) {
+		return a / b;
+	} else {
+		return "Division durch 0 nicht möglich";
+	}
 }
 
 
@@ -95,4 +107,3 @@ function div(a, b) {
 function output(outputData) {
 	console.log(outputData);
 }
-  
