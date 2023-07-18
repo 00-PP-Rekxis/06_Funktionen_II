@@ -5,24 +5,37 @@
 /*
 0. a+b | a-b | a*b | a/b  --> Ergebnis c 
 
-1. Dateneingabe + -überprüfung : 
+1. Dateneingabe + -überprüfung : check! | ??????
 2. Auswahl Rechenart : check!
 3. Fkt. Grundrechenarten : check!
 4. Ausgabe in Konsole : check!
 */
 
 const ERROR_STR_DIV = "Division durch 0 nicht möglich!";
-const ERROR_STR_GEN = "Irgednwas ging schief!";
-// module: calculator | tests:
+const ERROR_STR_GEN = "Irgendwas ging schief!";
 
+startApp();
+function startApp() {
+	output(calculator(getNum(), getNum(), getOp()));
+}
+
+function getNum() {
+	return parseInt(prompt("Zahl?"));
+}
+
+function getOp() {
+	return prompt("Operator?");
+}
+
+// module: calculator | tests:
 // agreement : "+","-","*",":","/"
-output(calculator(3,2,"+"));	// Expected: 5
-output(calculator(3,2,"-"));	// Expected: 1
-output(calculator(3,2,"*"));	// Expected: 6
-output(calculator(3,2,":"));	// Expected: 1.5
-output(calculator(3,2,"/"));	// Expected: 1.5
-output(calculator(3,0,"/"));	// Expected: ERROR_STR_DIV
-output(calculator(3,2,"#?!"));	// Expected: ERROR_STR_GEN
+// output(calculator(3,2,"+"));	// Expected: 5
+// output(calculator(3,2,"-"));	// Expected: 1
+// output(calculator(3,2,"*"));	// Expected: 6
+// output(calculator(3,2,":"));	// Expected: 1.5
+// output(calculator(3,2,"/"));	// Expected: 1.5
+// output(calculator(3,0,"/"));	// Expected: ERROR_STR_DIV
+// output(calculator(3,2,"#?!"));	// Expected: ERROR_STR_GEN
 function calculator(a, b, op) {
 	switch (op) {
 		case "+":
