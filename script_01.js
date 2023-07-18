@@ -6,22 +6,43 @@
 0. a+b | a-b | a*b | a/b  --> Ergebnis c 
 
 1. Dateneingabe + -überprüfung : 
-2. Auswahl Rechenart : 
+2. Auswahl Rechenart : check!
 3. Fkt. Grundrechenarten : check!
 4. Ausgabe in Konsole : check!
 */
 
-const ERROR_STR_DIV = "Division durch 0 nicht möglich";
+const ERROR_STR_DIV = "Division durch 0 nicht möglich!";
+const ERROR_STR_GEN = "Irgednwas ging schief!";
+// module: calculator | tests:
 
-
-
-
+// agreement : "+","-","*",":","/"
+output(calculator(3,2,"+"));	// Expected: 5
+output(calculator(3,2,"-"));	// Expected: 1
+output(calculator(3,2,"*"));	// Expected: 6
+output(calculator(3,2,":"));	// Expected: 1.5
+output(calculator(3,2,"/"));	// Expected: 1.5
+output(calculator(3,0,"/"));	// Expected: ERROR_STR_DIV
+output(calculator(3,2,"#?!"));	// Expected: ERROR_STR_GEN
+function calculator(a, b, op) {
+	switch (op) {
+		case "+":
+			return add(a, b);
+		case "-":
+			return sub(a, b);
+		case "*":
+			return multiply(a, b);
+		case ":":
+		case "/":
+			return divide(a, b);
+		default:
+			return ERROR_STR_GEN;
+	}
+}
 
 // module: addition a + b | test:
-// output(add(2, 2)); 	// Expected: 4
-// output(add(2, -2));	// Expected: 0
-// output(add(2, 0));	// Expected: 2
-
+// output(add(2, 2)); 		// Expected: 4
+// output(add(2, -2));		// Expected: 0
+// output(add(2, 0));		// Expected: 2
 function add(a, b) {
 	return a + b;
 }
@@ -31,27 +52,24 @@ function add(a, b) {
 // output(sub(3, -2));		// Expected: 5
 // output(sub(3, 0));		// Expected: 3
 // output(sub(0, 3));		// Expected: -3
-
 function sub(a, b) {
 	return a - b;
 }
 
 // module: multiplikation a - b | test:
-// output(multiply(3,2));		// Expected: 6
-// output(multiply(3,-2));		// Expected: -6	
-// output(multiply(3,0));		// Expected: 0
-
+// output(multiply(3,2));	// Expected: 6
+// output(multiply(3,-2));	// Expected: -6	
+// output(multiply(3,0));	// Expected: 0
 function multiply(a, b) {
 	return a * b;
 }
 
 // module: division a - b | test:
-// output(divide(4,2));			// Expected: 2
-// output(divide(3,2));			// Expected: 1.5
-// output(divide(3,-2));			// Expected: -1.5
-// output(divide(0,2));			// Ecpected: 0
-// output(divide(3,0));			// Expected: "Division durch 0 nicht möglich"
-
+// output(divide(4,2));		// Expected: 2
+// output(divide(3,2));		// Expected: 1.5
+// output(divide(3,-2));	// Expected: -1.5
+// output(divide(0,2));		// Ecpected: 0
+// output(divide(3,0));		// Expected: ERROR_STR_DIV
 function divide(a, b) {
 
 	if (b == 0) { // Ausnahme + Abbruch
@@ -62,50 +80,9 @@ function divide(a, b) {
 
 }
 
-
-
-
-
-
-
-
-
-
-
-// let a, b, c, rechenart;
-
-// console.log("Das ist ein Taschenrechner, geben sie nacheinander Zahl / Zahl / Rechenart ein.");
-
-// a = parseFloat(prompt('Geben Sie die erste Zahl ein:'));
-// b = parseFloat(prompt('Geben Sie die zweite Zahl ein: '));
-// rechenart = prompt("Geben sie die Rechenart ein. Zur auswahl stehen: + - * /")
-
-
-
-// function rechner(a, b, rechenart) {
-// 	switch (true) {
-// 		case rechenart == '+':
-// 			c = a + b;
-// 			break;
-// 		case rechenart == '-':
-// 			c = a - b;
-// 			break;
-// 		case rechenart == '*':
-// 			c = a * b;
-// 			break;
-// 		case rechenart == '/':
-// 			c = a / b;
-// 			break;
-// 		default:
-// 			output('Bitte geben sie Gültige Werte ein.')
-// }
-// output(`${a} ${rechenart} ${b} ergibt = ${c}`)
-// }
-// rechner(a,b,rechenart);
-
 // module: output | test:
-// output("hello");
-// output(2);
+// output("hello");			// Expected: "hello"
+// output(2);				// Expected: 2
 function output(outputData) {
 	console.log(outputData);
 }
