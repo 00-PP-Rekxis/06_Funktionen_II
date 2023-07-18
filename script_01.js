@@ -7,11 +7,11 @@
 
 1. Dateneingabe + -überprüfung : 
 2. Auswahl Rechenart : 
-3. Fkt. Grundrechenarten : 
-4. Ausgabe in Konsole : 
+3. Fkt. Grundrechenarten : check!
+4. Ausgabe in Konsole : check!
 */
 
-
+const ERROR_STR_DIV = "Division durch 0 nicht möglich";
 
 
 
@@ -46,18 +46,20 @@ function multiply(a, b) {
 }
 
 // module: division a - b | test:
-output(divide(4,2));			// Expected: 2
-output(divide(3,2));			// Expected: 1.5
-output(divide(3,-2));			// Expected: -1.5
-output(divide(0,2));			// Ecpected: 0
-output(divide(3,0));			// Expected: "Division durch 0 nicht möglich"
+// output(divide(4,2));			// Expected: 2
+// output(divide(3,2));			// Expected: 1.5
+// output(divide(3,-2));			// Expected: -1.5
+// output(divide(0,2));			// Ecpected: 0
+// output(divide(3,0));			// Expected: "Division durch 0 nicht möglich"
 
 function divide(a, b) {
-	if (b != 0) {
-		return a / b;
-	} else {
-		return "Division durch 0 nicht möglich";
+
+	if (b == 0) { // Ausnahme + Abbruch
+		return ERROR_STR_DIV;
 	}
+
+	return a / b; // Regel
+
 }
 
 
